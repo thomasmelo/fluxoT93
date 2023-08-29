@@ -1,7 +1,6 @@
 @extends('layouts.base')
 @section('content')
-    <h1>INDEX - LANCAMENTOS </h1>
-    <h2> {{ Auth::user()->name }}</h2>
+    <h1><i class="bi bi-wallet2"></i> - LANCAMENTOS </h1>
 
     {{-- alerts --}}
     @include('layouts.partials.alerts')
@@ -19,7 +18,7 @@
             </thead>
             <tbody class="table-group-divider">
                 <tr>
-                    <td scope="row" class="col-1">
+                    <td scope="row" class="col-2">
                         <div class="flex-column">
                             {{-- ver --}}
                             <a class="btn btn-success" href="#">

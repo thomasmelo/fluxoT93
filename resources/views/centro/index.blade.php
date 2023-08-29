@@ -1,6 +1,8 @@
 @extends('layouts.base')
 @section('content')
-    <h1>INDEX</h1>
+    <h1>
+        <i class="bi bi-list-check"></i> - Centro de Custo
+    </h1>
 
     {{-- alerts --}}
     @include('layouts.partials.alerts')
