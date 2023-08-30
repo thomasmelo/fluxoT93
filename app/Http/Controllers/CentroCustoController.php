@@ -64,7 +64,7 @@ class CentroCustoController extends Controller
         $centro->update($request->all());
         return redirect()
             ->route('centro.index')
-            ->with('atualizar', 'Atualizado com sucesso!');
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
