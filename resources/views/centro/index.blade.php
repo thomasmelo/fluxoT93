@@ -29,7 +29,10 @@
                         <td scope="row">
                             <div class="flex-column">
                                 {{-- ver --}}
-                                <a class="btn btn-success" href="#">
+                                <a class="btn btn-success"
+                                    href="{{ route('centro.show',
+                                                  ['id'=>$centro->id_centro_custo]
+                                                  ) }}">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 {{-- editar --}}
