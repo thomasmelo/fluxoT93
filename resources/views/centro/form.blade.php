@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-md-2">
-            <input class="btn btn-primary" type="submit"
+            <input class="btn btn-primary mt-4" type="submit"
         value="{{$centro ?
             'Atualizar' :
             'Cadastrar'
