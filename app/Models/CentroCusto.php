@@ -13,7 +13,7 @@ class CentroCusto extends Model
 
     protected $table = 'centro_custos';
     protected $primaryKey = 'id_centro_custo';
-    protected $date = [
+    protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at'

@@ -20,7 +20,7 @@ class Lancamento extends Model
     protected $table = 'lancamentos';
     protected $primaryKey = 'id_lancamento';
 
-    protected $date = [
+    protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
@@ -37,9 +37,9 @@ class Lancamento extends Model
         'anexo'
     ];
 
-    protected $cast = [
+    protected $casts = [
         'vencimento' => 'date',
-        'valor' => 'decimal'
+        'valor' => 'decimal:2'
     ];
 
     /**
