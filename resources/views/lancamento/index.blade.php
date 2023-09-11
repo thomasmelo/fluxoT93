@@ -3,6 +3,11 @@
     <h1>
         <i class="bi bi-wallet2"></i>
         - LANCAMENTOS
+        |
+        <a class="btn btn-primary"
+           href="{{ route('lancamento.create') }}">
+            Novo Lançamento
+        </a>
     </h1>
 
     {{-- alerts --}}
