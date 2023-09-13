@@ -65,6 +65,14 @@
           }}"
          required>
     </div>
+    <div class="col-md-3">
+        <label class="form-label" for="anexo" >
+            Anexo
+        </label>
+        <input class="form-control" type="file"  name="anexo" id="anexo"
+        value="{{ old('anexo') }}">
+    </div>
+
     <div class="col-md-12">
         <label class="form-label" for="descricao">Descrição*</label>
         <input class="form-control" type="text" id="descricao" name="descricao"
