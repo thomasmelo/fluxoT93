@@ -61,7 +61,11 @@ class LancamentoController extends Controller
         $lancamento->id_user = Auth::user()->id;
         // subir o anexo
         if($request->anexo){
-            $lancamento->anexo = $request->anexo->store('anexos');
+            $extension = $request->anexo->getClientOriginalExtension();
+            $nomeAnexo = date('YmdHis').'.'.$extension;
+            $request->anexo->storeAs('anexos',$nomeAnexo);
+            $lancamento->anexo = $nomeAnexo;
+            // $lancamento->anexo = $request->anexo->store('anexos');
         }
         $lancamento->save();
         return redirect()
