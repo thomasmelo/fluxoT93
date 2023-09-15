@@ -16,7 +16,17 @@
     {{-- paginação --}}
         {!! $lancamentos->links() !!}
     {{-- /paginação --}}
-
+    {{-- pesquisa --}}
+    <div class="col-12">
+        <form action="{{ route('lancamento.index') }}" method="get">
+            <input class="form-control" type="search"
+            name="search" id="search"
+            placeholder="Digite o que deseja pesquisar..."
+            value="">
+            <input class="btn btn-success" type="submit" value="Pesquisar">
+        </form>
+    </div>
+    {{-- /pesquisa --}}
     <div class="table-responsive">
         <table class="table table-striped  table-hover ">
             <thead>
@@ -38,10 +48,14 @@
                     <td scope="row" class="col-2">
                         <div class="flex-column">
                             {{-- ver anexo --}}
-                            <a class="btn btn-success"
-                            href="{{ url('/storage/anexos/'.$lancamento->anexo) }}" target="_blank">
+                            {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
+                            @if ($lancamento->anexo)
+                              <a class="btn btn-success"
+                            href="{{ Storage::url('/anexos/'.$lancamento->anexo)}}" target="_blank">
                                 <i class="bi bi-paperclip"></i>
                             </a>
+                            @endif
+
                             {{-- editar --}}
                             <a class="btn btn-dark" href="#">
                                 <i class="bi bi-pencil-square"></i>
