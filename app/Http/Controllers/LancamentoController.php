@@ -24,11 +24,23 @@ class LancamentoController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
+        $dt_inicial = $request->get('dt_inicial')??null;
+        $dt_final = $request->get('dt_final')??null;
+
         //where('id_user',Auth::user()->id)
-        $lancamentos = Lancamento::where(function ($query) use ($search){
+        $lancamentos = Lancamento::where(function ($query) use ($search,$dt_inicial,$dt_final){
             if($search){
                 $query->where('descricao','like',"%$search%");
             }
+
+            if($dt_inicial){
+                $query->where('vencimento','>=',$dt_inicial);
+            }
+
+            if($dt_final){
+                $query->where('vencimento','<=',$dt_final);
+            }
+
         })->orderBy('id_lancamento','desc')
             ->paginate(10);
 
