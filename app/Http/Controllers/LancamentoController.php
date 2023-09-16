@@ -24,9 +24,8 @@ class LancamentoController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-
-        $lancamentos = Lancamento::where('id_user',Auth::user()->id)
-         ->where(function ($query) use ($search){
+        //where('id_user',Auth::user()->id)
+        $lancamentos = Lancamento::where(function ($query) use ($search){
             if($search){
                 $query->where('descricao','like',"%$search%");
             }
