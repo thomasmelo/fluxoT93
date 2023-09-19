@@ -44,6 +44,28 @@
             name="dt_final" id="dt_final">
         </div>
         {{-- /data final --}}
+        <div class="col-md-3">
+            <label for="id_centro_custo" class="form-label">Centro de Custo*</label>
+            <select id="id_centro_custo" name="id_centro_custo" class="form-select" >
+                <option value="">Escolha...</option>
+                @foreach ($centrosDeCusto::orderBy('centro_custo')->get() as $centro )
+                <option value="{{$centro->id_centro_custo}}">
+                    {{ $centro->centro_custo}}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="id_tipo" class="form-label">Tipo*</label>
+            <select id="id_tipo" name="id_tipo" class="form-select" >
+                <option value="">Escolha...</option>
+                @foreach ($tipos::orderBy('tipo')->get() as $tipo )
+                <option value="{{ $tipo->id_tipo}}">
+                    {{ $tipo->tipo }}
+                </option>
+                @endforeach
+            </select>
+        </div>
 
 
         <input class="btn btn-success col-md-1" type="submit" value="Pesquisar">
